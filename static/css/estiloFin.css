@@ -1,0 +1,716 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    list-style: none;
+}
+
+body {
+    background-color: #201F24;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+input:focus {
+    outline: none;
+}
+
+input:active {
+    outline: none;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px;
+    background-color: #121114;
+    
+}
+
+.logo{
+    width: 152px ;
+    height: 23px;
+    margin-bottom: 50px;
+}
+
+header button {
+    background-color: #00B27E;
+    border: none;
+    width: 161px;
+    height: 52px;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-sair{
+    background-color: rgb(255, 84, 107);
+    width: 100px;
+    height: 52px;
+    margin-right: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-sair:hover{
+    background-color: rgb(185, 67, 83)
+}
+
+#novaTransacaoBtn:hover{
+    background-color: #067B5A;
+}
+
+/* Cartões */
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    gap: 60px;
+    margin: 0px 70px;
+    margin-top: -90px;
+}
+.card-title{
+    font-size: x-small;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #c0c0c0; 
+}
+.simble{
+    font-size: 20px;
+    color: white;
+}
+.title{
+    font-size: x-small;
+}
+#totalEntradas {
+    font-size:25px;
+    font-weight: bold;
+}
+#totalSaidas{
+    font-size:25px;
+    font-weight: bold;
+}
+#saldoTotal{
+    margin-top: -6px;
+    font-size:25px;
+    font-weight: bold;
+}
+.content{
+    text-align: left;   
+}
+.card {
+    background-color: #302F36;
+    padding: 50px 80px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+.total{
+    background-color:#025D43;
+}
+
+
+.transacoes {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.transacoes table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-collapse: collapse;
+}
+
+.transacoes th, .transacoes td {
+    padding: 10px;
+    text-align: left;
+}
+
+.transacoes table tbody {
+    display: flex;
+}
+
+.transacoes tbody tr {
+    background-color: #2b2b4b;
+}
+
+.a-editar{
+    width: 300px;
+}
+
+
+
+/* Modal */
+.modal {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+h3{
+    display: flex;
+    justify-content: space-between;
+}
+.modal-content {
+    background: #201F24;
+    height: auto;
+    padding: 60px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    & h3 {
+        margin-bottom: 20px;
+    }
+    & input{
+        margin-bottom: 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        background-color: #121114;
+        color: white;
+        border-radius: 5px;
+        border-color: #8D2C2C;
+        border: 1px solid #8D2C2C;
+        width: 100%;
+    }
+}
+
+
+
+.botoes button {
+    border: none;
+    padding: 15px 46px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.outflow {
+    background-color: #8D2C2C;
+    border-radius: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: white;
+}
+.outflow:hover{
+    background-color: #be3b3b;
+}
+
+.income {
+    background-color: #007C59;
+    border-radius: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: white;
+}
+.income:hover{
+    background-color: #08a87b ;
+}
+
+#closeModal {
+    background-color: #302F36;
+    color: white;
+    padding: 15px 120px;
+    border-radius: 5px;
+    border:none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+#closeModal:hover{
+    background-color: #525255;
+}
+
+
+#closeModalEdita {
+    background-color: #302F36;
+    color: white;
+    padding: 15px 120px;
+    border-radius: 5px;
+    border:none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+#closeModalEdita:hover{
+    background-color: #525255;
+}
+
+.delete {
+    background-color: #8D2C2C;
+    border-radius: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: white;
+}
+.delete:hover{
+    background-color: #be3b3b;
+}
+
+.save {
+    background-color: #007C59;
+    border-radius: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: white;
+}
+.save:hover{
+    background-color: #08a87b ;
+}
+
+.G{
+    color: #007C59;
+}
+.R{
+    color: #8D2C2C;
+} 
+
+
+.transacoes table {
+    width: 90%;
+    border-collapse: separate;
+    border-spacing: 0 10px; 
+    margin: 0 auto;
+}
+
+.transacoes tbody tr {
+    background-color: #302F36;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.transacoes tbody tr td {
+    padding: 10px 15px;
+    color: #fff;
+}
+
+.transacoes th {
+    background-color: #302F36;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+}
+
+.botoes-acao button {
+    background-color: #2b2b4b;
+    border: 1px solid #fff;
+    padding: 5px 10px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 8px; 
+}
+
+.botoes-acao button:hover {
+    background-color: #1db954;
+}
+
+
+.transacoes tbody tr:hover {
+    background-color: #45444e; 
+}
+
+
+.transacoes tbody {
+    background-color: transparent;
+}
+
+.search{
+    font-family: "Montserrat-a", serif;
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    & div {
+        background-color: #302F36;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 0;
+        width: 44.5%;
+        border-radius: 10px;
+        transition: 0.1s;
+        cursor: pointer;
+        &:hover{
+            background-color: #45444e;
+        }
+    }
+}
+
+#lista-despesa, #lista-receita{
+    display: none;
+}
+
+.search-tab{
+    background-color: #121114;
+    width: 890px;
+    margin-left: 25px;
+    padding: 15px 15px;
+    border-radius: 20px;
+    border: none;
+    font-size: large;
+    color:white;
+}
+.search button{
+    background-color: #00000000;
+    color:#025D43;
+    border-color: #025D43;
+    padding: 15px 60px;
+    border: #025D43;
+    border-style: solid;
+    border-radius: 20px;
+    font-size: large;
+    cursor: pointer;
+}
+
+.entrada{
+    color: green
+}
+.saida{
+    color:red
+}
+td .entrada{
+    color: #00B27E;
+}
+td .saida{
+    color:#e63946;
+}
+
+/* Tirar Scroll Bar */
+
+::-webkit-scrollbar{
+    background-color: #00000000;
+    width: 1px;
+}
+::-webkit-scrollbar-thumb{
+    width: 1px;
+    color: #1db954;
+}
+
+/* Rodapé */
+
+footer {
+    background-color: #121212;
+    padding: 40px;
+    padding-top: 2px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: -5px;
+    
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer-logo img {
+    width: 110px;
+}
+
+.footer-section {
+    max-width: 200px;
+}
+
+.footer-section h3 {
+    color: #00B27E;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ffffff  ;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    background-color: #067B5A;
+    border-radius: 2px;
+}
+
+.alert {
+    position: fixed;
+    z-index: 9999;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: surgir 4s;
+    padding: 10px 15px;
+    border-radius: 5px;
+    &.error {
+        background: #ff546b;
+    }
+    &.success {
+        background: #007C59;
+    }
+    & span{
+    font-weight: 700;
+    }
+}
+
+@keyframes surgir {
+    0% { opacity: 0; display: block}
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; display: none}
+}
+
+
+@media (max-width: 768px) {
+    /* Header */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .logo {
+        width: 120px;
+        height: auto;
+    }
+
+    header button {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    /* Cartões */
+    .cards {
+        flex-direction: column;
+        margin: 0;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    /* Tabela de transações */
+    .transacoes table {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .transacoes td, .transacoes th {
+        padding: 8px;
+    }
+
+    /* Modal */
+    .modal-content {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    /* Botões de ação no modal */
+    .botoes button {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+
+    .search-tab {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    /* Rodapé */
+    footer {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .footer-logo img {
+        width: 80px;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .search-tab {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .botoes button {
+        padding: 10px 30px;
+        font-size: 12px;
+    }
+
+    /* cards*/
+    .card {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .card-title {
+        font-size: 12px;
+    }
+
+    /* Modal */
+    .modal-content {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .footer-section h3 {
+        font-size: 16px;
+    }
+
+    .footer-section ul li a {
+        font-size: 12px;
+    }
+}@media (max-width: 768px) {
+    /* Header */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .logo {
+        width: 120px;
+        height: auto;
+    }
+
+    header button {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    /* Cartões */
+    .cards {
+        flex-direction: column;
+        margin: 0;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    /* Tabela de transações */
+    .transacoes table {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .transacoes td, .transacoes th {
+        padding: 8px;
+    }
+
+    /* Modal */
+    .modal-content {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    /* Botões de ação no modal */
+    .botoes button {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+
+    .search-tab {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    /* Rodapé */
+    footer {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .footer-logo img {
+        width: 80px;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .search-tab {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .botoes button {
+        padding: 10px 30px;
+        font-size: 12px;
+    }
+
+    /* cards*/
+    .card {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .card-title {
+        font-size: 12px;
+    }
+
+    /* Modal */
+    .modal-content {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .footer-section h3 {
+        font-size: 16px;
+    }
+
+    .footer-section ul li a {
+        font-size: 12px;
+    }
+}

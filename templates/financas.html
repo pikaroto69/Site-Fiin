@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WePay - Controle de Transações</title>
+
+    <link rel="icon" type="image/png" href="../static/img/logoMini.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/estiloFin.css" />
+  </head>
+  <body>
+    <header>
+      <img class="logo" src="../static/img/Logo.png" />
+        <div>
+            <a href="/sair"><button  class="btn-sair">Sair</button></a>
+            <button id="novaTransacaoBtn">Nova Transação</button>
+        </div>
+
+    </header>
+
+    <!-- Saldo/Saidas/Entradas-->
+    <section class="cards">
+      <div class="card">
+        <div class="card-title">
+          <span class="title">Entradas</span>
+          <span><b class="G">▲</b></span>
+        </div>
+        <div class="content">
+          <p id="totalEntradas">R$ {{ receita }}</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">
+          <span class="title">Saídas</span>
+          <span><b class="R">▼</b></span>
+        </div>
+        <div class="content">
+          <p id="totalSaidas">R$ {{ despesa }}</p>
+        </div>
+      </div>
+
+      <div class="card total">
+        <div class="card-title">
+          <span class="title">Total</span>
+          <span class="simble">$</span>
+        </div>
+        <div class="content">
+          <p id="saldoTotal">R$ {{ receita - despesa }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="transacoes">
+      <section class="search">
+        <div id="div-select-receita" onclick="selectListaReceita()">
+            <p>Receitas</p>
+        </div>
+        <div id="div-select-despesa" onclick="selectListaDespesa()">
+            <p>Despesas</p>
+        </div>
+      </section>
+      <section>
+          <table id="listaTransacoes">
+            <tbody id="lista-despesa">
+                {% for item in historico_despesa %}
+                <tr onclick="abrirEditar('{{ item[0] }}', {{ item[1] }}, '{{ item[2] }}', {{ item[3] }}, 'despesa')">
+                    <td>{{ item[0] }}</td>
+                    <td class="saida" style="color:#ff546b">R$ {{ item[1] }}</td>
+                    <td style="color: #ff546b">Saída</td>
+                    <td>{{ item[2] }}</td>
+                    <input type="hidden" id="input-id" value="{{ item[3] }}" />
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tbody id="lista-receita">
+              {% for item in historico_receita %}
+                <tr onclick="abrirEditar('{{ item[0] }}', {{ item[1] }}, '{{ item[2] }}', {{ item[3] }}, 'receita')">
+                    <td>{{ item[0] }}</td>
+                    <td class="saida" style="color:#00B27E">R$ {{ item[1] }}</td>
+                    <td style="color:#00B27E">Entrada</td>
+                    <td>{{ item[2] }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+      </section>
+    </section>
+
+      <!-- Modal para transacao -->
+      <div class="modal" id="modalNovaTransacao">
+        <form class="modal-content" method="POST" id="transacaoForm">
+          <h3>Nova Transação</h3>
+          <div class="forms">
+              <input type="text" id="descricao" placeholder="Descrição" name="descricao" />
+              <input type="number" id="preco" placeholder="Preço" name="valor"/>
+              <input type="date" id="data" placeholder="Data" name="data"/>
+          </div>
+          <div class="botoes">
+              <button class="outflow" id="saidaBtn" type="submit">Saída</button>
+              <button class="income" id="entradaBtn" type="submit">Entrada</button>
+          </div>
+          <button class="closeBtn" id="closeModal" type="button">Fechar</button>
+        </form>
+      </div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="alert {{ messages[0][0] }}">
+                <p><span>{{ messages[0][1] }}</span></p>
+            </div>
+        {% endif %}
+    {% endwith %}
+
+  <div class="modal" id="modalEditaTransacao">
+    <div class="modal-content">
+      <h3>Editar Transação</h3>
+      <form class="forms" id="form-editar" method="post">
+        <input type="text" id="descricao_edit" placeholder="Descrição" name="fonte" required/>
+        <input type="number" id="preco_edit" placeholder="Preço" name="valor" required/>
+        <input type="date" id="data_edit" name="data" required/>
+        <input type="hidden" id="id_edit" name="id"/>
+        <input type="hidden" id="tipo_edit" name="tipo"/>
+      </form>
+      <div class="botoes">
+        <button class="save" id="salvarEdicaoBtn">Salvar</button>
+        <button class="delete" id="excluirEdicaoBtn">Excluir</button>
+      </div>
+      <button class="closeBtn" id="closeModalEdita">Fechar</button>
+    </div>
+  </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#121212" fill-opacity="1" d="M0,224L80,213.3C160,203,320,181,480,192C640,203,800,245,960,256C1120,267,1280,245,1360,234.7L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+
+    <footer>
+      <div class="footer-logo">
+          <img src="../static/img/Logo.png" alt="Logo">
+      </div>
+      <div class="footer-section">
+          <h3>Termos legais</h3>
+          <ul>
+              <li><a href="#">Política de Privacidade</a></li>
+              <li><a href="#">Suas escolhas de privacidade</a></li>
+              <li><a href="#">No Brasil</a></li>
+              <li><a href="#">Segurança</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>App</h3>
+          <ul>
+              <li><a href="#">O que há de novo</a></li>
+              <li><a href="#">Central de ajuda</a></li>
+              <li><a href="#">Sugestões</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Trabalhe conosco</h3>
+          <ul>
+              <li><a href="#">A empresa</a></li>
+              <li><a href="#">Imprensa</a></li>
+              <li><a href="#">Carreiras</a></li>
+          </ul>
+      </div>
+  </footer>
+  <script src="../static/scriptFin.js"></script>
+  </body>
+</html>

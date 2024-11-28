@@ -1,0 +1,604 @@
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #201F24;
+    color: #ffffff;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body.modal-open::-webkit-scrollbar {
+    display: none;
+}
+
+.header1, .header2 {
+    transition: background-color 0.3s ease;
+}
+
+.header1 {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    padding: 20px 0;
+    background-color: transparent;
+
+}
+
+header .pai0 {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header li button {
+    width: 161px;
+    height: 52px;
+    background-color: #00B27E;
+    border: none;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    
+}
+
+header li button:hover {
+    background-color: #067B5A;
+}
+
+.header2 {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    padding: 20px 0;
+    background-color: black;
+
+}
+
+.banner {
+    height: 100vh;
+    background-image: url('/static/img/banner.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-content button {
+    background-color: transparent;
+    border: 1px solid #00B27E;
+    color: #00B27E;
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.banner-content button:hover {
+    background-color: #00B27E;
+    color: #ffffff;
+}
+
+.espaco-preto {
+    background-color: #000000;
+    padding: 3em;
+}
+
+body {
+    background-color: #201F24;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+}
+
+.section1 {
+    text-align: center;
+    padding-top: 2.5em;
+    margin-top: 75px;
+}
+
+.titulo2 {
+    color: #067B5A;
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.div-button button {
+    background-color: transparent;
+    border: 1px solid #00B27E;
+    color: #00B27E;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+.div-button button:hover {
+    background-color: #00B27E;
+    color: #ffffff;
+}
+
+.pai-card {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.card {
+    perspective: 1000px;
+    width: 263px;
+    height: 266px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.3s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg) scale(1.07);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 8px;
+    font-size: 24px;
+    padding: 20px;
+    color: #ffffff;
+}
+
+.card-front {
+    background-color: #302F36;
+    border-bottom: 5px solid transparent;
+}
+
+#card1 .card-front { border-bottom-color: #00B27E; }
+#card2 .card-front { border-bottom-color: #00b27dcc; }
+#card3 .card-front { border-bottom-color: #0A9770; }
+#card4 .card-front { border-bottom-color: #196E59; }
+
+.card-back {
+    background-color: #302F36;
+    transform: rotateY(180deg);
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    padding: 15px;
+}
+
+.card:hover .card-back {
+    border-bottom: 5px solid;
+}
+
+#card1 .card-back { border-color: #00B27E; }
+#card2 .card-back { border-color: #00b27dcc; }
+#card3 .card-back { border-color: #0A9770; }
+#card4 .card-back { border-color: #196E59; }
+
+.numero, .numero2, .numero3, .numero4 {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+.numero { background-color: #00B27E; }
+.numero2 { background-color: #00b27dcc; }
+.numero3 { background-color: #0A9770; }
+.numero4 { background-color: #196E59; }
+
+.card p {
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+}
+
+
+.pai-section1{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+footer {
+    background-color: #121212;
+    padding: 40px;
+    padding-top: 2px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: -5px;
+    
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer-logo img {
+    width: 110px;
+}
+
+.footer-section {
+    max-width: 200px;
+}
+
+.footer-section h3 {
+    color: #00B27E;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ffffff  ;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    background-color: #067B5A;
+    border-radius: 2px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background-color: #201F24;
+    padding: 40px;
+    width: 450px;
+    max-width: 450px;
+    border-radius: 5px;
+    position: relative;
+    text-align: center;
+    height: auto;
+}
+
+.modal-content h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-content input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #121114;
+    color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.modal-content input.error {
+    border-color: red;
+}
+
+.modal-content input.success {
+    border-color: green;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.modal-buttons button {
+    flex: 1;
+    background-color: #302F36;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-buttons button:hover {
+    background-color: #4e4d56;
+}
+
+.login-btn {
+    background-color: #007C59;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #0f9972;
+}
+
+.cadastrar-btn {
+    background-color: #007C59;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.cadastrar-btn:hover {
+    background-color: #0f9972;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    flex: 1;
+}
+
+.hold-password {
+    position: absolute;
+    right: 10px;
+    background: none;   
+    border: none;
+    font-size: 16px;
+    color: #00B27E;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.hold-password:hover {
+    color: #067B5A;
+}
+
+
+.alert {
+    position: fixed;
+    z-index: 9999;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: surgir 4s;
+    padding: 10px 15px;
+    border-radius: 5px;
+    &.error {
+        background: #ff546b;
+    }
+    &.success {
+        background: #007C59;
+    }
+}
+
+@keyframes surgir {
+    0% { opacity: 0; display: block}
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; display: none}
+}
+
+.btn-sair2{
+    background-color: #067B5A;
+    width: 120px;
+    height: 52px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-sair2:hover{
+    background-color: #045e44;  
+}   
+
+.modal-subscription {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-subscription-content {
+    background-color: #201F24;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+}
+
+.close-subscription {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.subscription-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.subscription-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.subscription-content input {
+    width:100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #121114;
+    color: #fff;
+}
+
+#btnSubmitSubscription {
+    background-color: #007C59;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+#btnSubmitSubscription:hover {
+    background-color: #0f9972;
+}
+
+#subscriptionForm{
+    display: ;
+}
+
+.alert {
+    display: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3000;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.alert.show {
+    display: block;
+    opacity: 1;
+}
+
+
+@media (max-width: 426px){
+    .card p {
+        font-size: 12px;
+    }
+    header .pai0 {
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 435px){
+    footer {
+        background-color: #121212;
+        padding: 40px;
+        padding-top: 2px;
+        display: flex;
+        justify-content: space-around;
+        margin-top: -5px;
+        flex-direction: column-reverse;
+    }
+}

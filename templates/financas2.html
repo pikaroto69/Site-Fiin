@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/styleregras.css">
+    <link rel="icon" type="image/png" href="../static/img/logoMini.png">
+</head>
+<body>
+    <header class="header1" id="header">
+        <div class="pai0">
+            <div class="logo">
+                <a href="/"><img src="../static/img/Logo.png" alt="Logo"></a>
+            </div>
+            <nav>
+                <li>
+                    <a><button id=""  class="btn-sair2">Assinatura</button></a>
+                </li>
+            </nav>
+
+        </div>
+    </header>
+
+    <div class="banner">
+        <div class="div-button tamanho"><a href="/"><button>Voltar para a página inicial</button></a></div>
+    </div>
+
+    </div>
+    <div class="espaco-preto"></div>
+
+    <div id="subscriptionModalContainer" class="modal-subscription">
+        <div class="modal-subscription-content">
+            <span id="closeSubscriptionModal" class="close-subscription">&times;</span>
+            <h2>Assinatura</h2>
+            <div class="subscription-content">
+                <div class="subscription-image">
+                    <img src="../static/img/Logo.png" alt="Imagem de assinatura" id="subscriptionImage" style="width: 100%; height: auto;">
+                </div>
+                <form id="subscriptionForm">
+                    <label for="emailSubscription">Caso houver interesse nos envie um e-mail!</label>
+                    <input type="email" class=" " name="email" placeholder="E-mail" required>
+                    <button type="submit" id="btnSubmitSubscription">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Logar-se</h2>
+            <form id="form-login" action="{{ url_for('login') }}" method="post">
+                <input type="email" placeholder="E-mail" name="email">
+                <div class="password-wrapper">
+                    <input type="password" placeholder="Senha" id="login-password" name="senha">
+                    <button type="button" class="hold-password" data-target="login-password"><i class="fas fa-eye-slash"></i></button>
+                </div>
+                <div class="modal-buttons">
+                    <button id="openRegisterModal" class="btn-cadastrar-se" type="button">Cadastrar-se</button>
+                </div>
+                <button type="submit" class="login-btn">Logar</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Cadastrar-se</h2>
+            <form class="form-cadastrar" action="{{ url_for('criar') }}" method="post">
+                <input type="text" placeholder="Nome" name="nome">
+                <input type="email" placeholder="E-mail" name="email">
+                <div class="password-wrapper">
+                    <input type="password" placeholder="Senha" id="register-password" name="senha">
+                    <button type="button" class="hold-password" data-target="register-password"><i class="fas fa-eye-slash"></i></button>
+                </div>
+                <div class="modal-buttons">
+                    <button id="openLoginModal" type="button">Voltar para o Login</button>
+                </div>
+                <button type="submit" class="cadastrar-btn">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="div-prin">
+
+        <div class="nosdawepay2">
+            <h2> Controle Seus Gastos no Dia a Dia</h2>
+            <p> Anote tudo o que entra e sai do seu bolso. Parece simples, mas é o primeiro passo para
+                entender onde seu dinheiro está indo. Com a WePay, você acompanha todas as suas movimentações
+                 de forma automática e fácil, direto no app.</p>
+         </div>
+         <div class="nosdawepay2">
+            <h2> Crie Metas Financeiras Claras</h2>
+            <p>Quer fazer uma viagem, comprar algo especial ou quitar dívidas? Defina suas
+            prioridades e estabeleça metas. No app WePay, você pode criar metas personalizadas e acompanhar
+             o progresso para alcançá-las sem estresse.</p>
+            </div>
+            <div class="nosdawepay2">
+            <h2> Evite Parcelar Compras Desnecessárias</h2>
+            <p>O parcelamento pode parecer atrativo, mas os juros acumulados
+                 podem pesar no orçamento. Use a função de alertas do WePay para lembrar de pagar
+                  à vista sempre que possível.</p>
+                </div>
+            <div class="nosdawepay2">
+            <h2> Poupe Sempre que Receber</h2>
+            <p>Reserve pelo menos 10% do que ganha para uma poupança ou investimento.
+                     Não espere sobrar: comece com pouco e aumente aos poucos. Com a WePay, você tem
+                     gráficos que mostram como o hábito de poupar pode crescer mês a mês.</p>
+                    </div>
+            <div class="nosdawepay2">
+            <h2> Invista no Seu Futuro </h2>
+            <p>Não deixe seu dinheiro parado. Descubra opções de investimento
+                         e acompanhe o crescimento do seu patrimônio. Em breve, a WePay também vai ajudar
+                         você a investir de forma prática e descomplicada.</p>
+                        </div>
+            <div class="nosdawepay2">
+            <h2> Livre-se das Dívidas Estrategicamente </h2>
+            <p>Liste todas as dívidas e organize os pagamentos priorizando as que
+                têm juros mais altos. No WePay, você visualiza suas dívidas de forma organizada
+                 e recebe recomendações para quitá-las mais rápido.</p>
+                </div>
+    </div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#121212" fill-opacity="1" d="M0,224L80,213.3C160,203,320,181,480,192C640,203,800,245,960,256C1120,267,1280,245,1360,234.7L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+    <footer>
+        <div class="footer-logo">
+            <img src="../static/img/Logo.png" alt="Logo">
+        </div>
+        <div class="footer-section">
+            <h3>Termos legais</h3>
+            <ul>
+                <li><a href="#">Política de Privacidade</a></li>
+                <li><a href="#">Suas escolhas de privacidade</a></li>
+                <li><a href="#">No Brasil</a></li>
+                <li><a href="#">Segurança</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>App</h3>
+            <ul>
+                <li><a href="#">O que há de novo</a></li>
+                <li><a href="#">Central de ajuda</a></li>
+                <li><a href="#">Sugestões</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Trabalhe conosco</h3>
+            <ul>
+                <li><a href="#">A empresa</a></li>
+                <li><a href="#">Imprensa</a></li>
+                <li><a href="#">Carreiras</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+
+<script>
+
+window.addEventListener("scroll", function(event) {
+        var header = document.querySelector("#header");
+        var top = this.scrollY;
+
+        if (top >= 560) {
+            header.className = "header2";
+        } else {
+            header.className = "header1";
+        }
+    }, false);
+
+window.addEventListener('load', function() {
+        const alert = document.querySelector('.alert');
+
+        setTimeout(function() {
+            alert.remove();
+        }, 3900);
+    });
+
+
+
+    document.getElementById("openModal").onclick = function() {
+        document.getElementById("loginModal").style.display = "flex";
+        document.body.classList.add("modal-open");
+    };
+
+    document.querySelectorAll(".close").forEach((closeButton, index) => {
+        closeButton.onclick = function() {
+            if (index === 0) {
+                document.getElementById("loginModal").style.display = "none";
+            } else if (index === 1) {
+                document.getElementById("registerModal").style.display = "none";
+            }
+            document.body.classList.remove("modal-open");
+            resetForm();
+        };
+    });
+
+    document.getElementById("openRegisterModal").onclick = function() {
+        document.getElementById("loginModal").style.display = "none";
+        document.getElementById("registerModal").style.display = "flex";
+    };
+
+    document.getElementById("openLoginModal").onclick = function() {
+        document.getElementById("registerModal").style.display = "none";
+        document.getElementById("loginModal").style.display = "flex";
+    };
+
+    const inputs = document.querySelectorAll('.modal-content input');
+    inputs.forEach(input => {
+        input.addEventListener('input', function() {
+            if (input.value.trim() === '') {
+                input.classList.remove('success');
+                input.classList.add('error');
+            } else {
+                input.classList.remove('error');
+                input.classList.add('success');
+            }
+        });
+    });
+
+    const inputs2 = document.querySelectorAll('.subscription-content input');
+    inputs.forEach(input => {
+        input.addEventListener('input', function() {
+            if (input.value.trim() === '') {
+                input.classList.remove('success');
+                input.classList.add('error');
+            } else {
+                input.classList.remove('error');
+                input.classList.add('success');
+            }
+        });
+    });
+
+    window.addEventListener("scroll", function(event) {
+        var header = document.querySelector("#header");
+        var top = this.scrollY;
+
+        if (top >= 560) {
+            header.className = "header2";
+        } else {
+            header.className = "header1";
+        }
+    }, false);
+
+    function resetForm() {
+        const inputs = document.querySelectorAll('.modal-content input');
+        inputs.forEach(input => {
+            input.value = '';
+            input.classList.remove('error', 'success');
+        });
+    }
+
+    document.querySelectorAll('.hold-password').forEach(button => {
+        const targetInput = document.getElementById(button.dataset.target);
+
+        button.addEventListener('mousedown', () => {
+            targetInput.type = 'text';
+            button.querySelector('i').classList.replace('fa-eye-slash', 'fa-eye');
+        });
+
+        button.addEventListener('mouseup', () => {
+            targetInput.type = 'password';
+            button.querySelector('i').classList.replace('fa-eye', 'fa-eye-slash');
+        });
+
+        button.addEventListener('mouseleave', () => {
+            targetInput.type = 'password';
+            button.querySelector('i').classList.replace('fa-eye', 'fa-eye-slash');
+        });
+    });
+
+    document.getElementById("btnOpenSubscriptionModal").onclick = function () {
+        document.getElementById("subscriptionModalContainer").style.display = "flex";
+        document.body.classList.add("modal-open");
+    };
+
+    document.getElementById("closeSubscriptionModal").onclick = function () {
+        document.getElementById("subscriptionModalContainer").style.display = "none";
+        document.body.classList.remove("modal-open");
+    };
+
+
+
+    document.getElementById("subscriptionForm").onsubmit = function (event) {
+        event.preventDefault();
+        alert("E-mail enviado com sucesso!"); 
+    document.getElementById("emailSubscription").value = "";
+    document.getElementById("subscriptionModalContainer").style.display = "none"; 
+    document.body.classList.remove("modal-open");
+};
+
+
+</script>
+</html>
