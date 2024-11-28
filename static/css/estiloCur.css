@@ -41,19 +41,29 @@ header .pai0 {
 }
 
 
-
-
-
-
-
-
 body {
     background-color: #201F24;
     color: #ffffff;
     font-family: "Montserrat", sans-serif;
 }
 
+.tit{
+}
+.titulo{
+    text-align: center;
+    background-color: #00B27E;
+}
+.subtitulo{
 
+}
+.subtitulo_realce{
+    color: rgb(15, 255, 163);
+}
+.sub20{
+    align-items: center;
+    display: flex;
+    background-color: #067B5A;
+}
 
 
 footer {
