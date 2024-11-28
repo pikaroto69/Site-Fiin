@@ -94,11 +94,13 @@ header li button {
     height: 200px;
     background-color: #067B5A;
     color: #fff;
-    border-radius: 50%;
+    border-radius: 10%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    justify-content:end;
+    align-items:end;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    text-align:left;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
@@ -116,7 +118,7 @@ header li button {
 
   .nosdawepay2 p {
     position: absolute;
-    top: 210px; /* Distância acima da bolha */
+    top: -70px; /* Distância acima da bolha */
     left: 50%;
     transform: translateX(-50%);
     width: 280px; /* Largura fixa do balão */
@@ -138,15 +140,15 @@ header li button {
   .nosdawepay2 p::after {
     content: '';
     position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 100%; /* Alinha o triângulo abaixo do balão */
+    left: 50%; /* Centraliza o triângulo horizontalmente */
+    transform: translateX(-50%); /* Garante que o triângulo fique centralizado */
     width: 0;
     height: 0;
-    border-left: 8px solid transparent;
+    border-left: 8px solid transparent; /* Cria o formato do triângulo */
     border-right: 8px solid transparent;
-    border-bottom: 8px solid rgba(0, 0, 0, 0.9);
-  }
+    border-top: 8px solid rgba(0, 0, 0, 0.9); /* Define a cor do triângulo */
+}
 
   .nosdawepay2:hover p {
     opacity: 1;
