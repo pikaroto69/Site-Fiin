@@ -395,6 +395,24 @@ td .saida {
   color: #e63946;
 }
 
+.btnCurso{
+  text-align: center;
+}
+
+.botCursos {
+  margin: 30px;
+  background-color: #45444e;
+  border: none;
+  width: 180px;
+  height: 60px;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 50px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
 /* Tirar Scroll Bar */
 
 ::-webkit-scrollbar {
