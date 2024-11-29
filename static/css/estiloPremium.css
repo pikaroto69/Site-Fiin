@@ -18,17 +18,17 @@
     padding: 20px 0;
     background-color: transparent;
     background-color: #000000;
-  }
-  
-  header .pai0 {
+}
+
+header .pai0 {
     width: 95%;
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;
     display: flex;
-  }
-  
-  header button {
+}
+
+header button {
     width: 161px;
     height: 52px;
     background-color: #00b27e;
@@ -40,36 +40,41 @@
     border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.3s ease;
-  }
-  header button:hover {
+}
+
+header button:hover {
     background-color: #067b5a;
     cursor: pointer;
-  }
-  
-  /* Section */
+}
+
+.btn_redirecionar {
+    gap: 10px;
+}
+
+/* Section */
 section {
     text-align: center;
 }
-  
+
 section h1 {
     font-size: 2.5rem;
     color: #00B27E;
     margin-bottom: 20px;
     background-color: #29282d;
 }
-  
+
 .subtitulo {
     font-size: 1.2rem;
-    color:#ffffff;
+    color: #ffffff;
     padding-bottom: 45px;
 }
-  
+
 .lucro {
     color: #00ffb3;
     font-weight: bold;
     text-decoration: underline;
 }
-  
+
 section .gasto {
     color: #ff0000;
     font-weight: bold;
@@ -87,13 +92,12 @@ section .gasto {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    margin: 20px;
+    gap: 10px;
 }
 
 .video {
-    border-radius: 10px;
     border: 5px solid #00b27e;
-    border-radius: 10px;
     padding: 10px;
 }
 
@@ -105,7 +109,7 @@ footer {
     display: flex;
     justify-content: space-around;
     margin-top: -5px;
-    
+
 }
 
 .footer-logo {
@@ -139,7 +143,7 @@ footer {
 }
 
 .footer-section ul li a {
-    color: #ffffff  ;
+    color: #ffffff;
     text-decoration: none;
     font-size: 14px;
     transition: background-color 0.3s ease;
