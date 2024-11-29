@@ -9,35 +9,59 @@
 }
 
 :root {
-    --fundo: #46464f;
+    --fundo: #37363d;
 }
 
-header.header1 {
-    background-color: #000000; /* Fundo do header */
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-}
+.header1 {
+    width: 100%;
+    z-index: 1;
+    padding: 20px 0;
+    background-color: transparent;
+    background-color: #000000;
+  }
   
-header .logo img {
-    max-width: 120px;
-}
+  header .pai0 {
+    width: 95%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+  
+  header button {
+    width: 161px;
+    height: 52px;
+    background-color: #00b27e;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    text-align: center;
+    cursor: auto;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  header button:hover {
+    background-color: #067b5a;
+    cursor: pointer;
+  }
   
   /* Section */
 section {
     text-align: center;
-    padding: 50px 20px;
 }
   
 section h1 {
     font-size: 2.5rem;
     color: #00B27E;
     margin-bottom: 20px;
+    background-color: #29282d;
 }
   
 .subtitulo {
     font-size: 1.2rem;
-    color:#000000;
+    color:#ffffff;
+    padding-bottom: 45px;
 }
   
 .lucro {
@@ -53,6 +77,15 @@ section .gasto {
 /* CSS do body */
 .corpo {
     background-color: var(--fundo);
+}
+
+.sessao_videos {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
 
 /* Cabeçalho */
