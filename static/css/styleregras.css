@@ -531,8 +531,8 @@ footer {
 
 #subscriptionForm{
     display: block;
-    flex-direction: ;
-    align-items: ;
+    flex-direction: 0;
+    align-items: 0;
 }
 
 
