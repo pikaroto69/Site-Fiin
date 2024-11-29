@@ -132,17 +132,18 @@ header li button {
 
 /* Triângulo abaixo do balão */
 .nosdawepay2 p::after {
-  content: "";
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 8px solid rgba(0, 0, 0, 0.9);
+    content: '';
+    position: absolute;
+    top: 100%; /* Alinha o triângulo abaixo do balão */
+    left: 50%; /* Centraliza o triângulo horizontalmente */
+    transform: translateX(-50%); /* Garante que o triângulo fique centralizado */
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent; /* Cria o formato do triângulo */
+    border-right: 8px solid transparent;
+    border-top: 8px solid rgba(0, 0, 0, 0.9); /* Define a cor do triângulo */
 }
+
 
 .nosdawepay2:hover p {
   opacity: 1;
@@ -517,8 +518,8 @@ body.modal-open {
 
 #subscriptionForm {
   display: block;
-  flex-direction: ;
-  align-items: ;
+  flex-direction: 0 ;
+  align-items:0 ;
 }
 
 @media (max-width: 426px) {
@@ -531,7 +532,7 @@ body.modal-open {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+} }
 
 
 
