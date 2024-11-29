@@ -1,11 +1,12 @@
 from flask import Flask, render_template, redirect, url_for, flash, request, session
 import fdb
+import re
 
 app = Flask(__name__)
 app.secret_key = 'matheus-lindo'
 
 host = 'localhost'
-database = r'C:\Users\Aluno\Desktop\Site-Fiin\WePay.FDB'
+database = r'C:\Users\Aluno\PycharmProjects\Esse\WePay.FDB'
 user = 'SYSDBA'
 password = 'sysdba'
 
@@ -32,20 +33,28 @@ class Receita:
         self.preco = preco
         self.descricao = descricao
 
+
+
+def validar_senha(senha):
+    # Expressão regular para validar os critérios
+    regex = r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$'
+    # Retorna True se a senha for válida, False caso contrário
+    return bool(re.fullmatch(regex, senha))
+
 @app.route('/')
 def index():
     cursor = con.cursor()
     cursor.execute("SELECT id_usuario, nome, senha, email FROM USUARIO")
-    USUARIO = cursor.fetchall()
+    usuario = cursor.fetchall()
     cursor.close()
-    return render_template('index.html', usuario=USUARIO)
+    return render_template('index.html', usuario=usuario, modal=False)
 
 @app.route('/financas2')
 def financas2():
     return render_template('financas2.html')
 
 @app.route('/financas')
-def financas():
+def financas(modal=False):
     nome = session.get('nome')
 
 
@@ -72,9 +81,7 @@ def financas():
     historico_receita = cursor.fetchall()
 
     cursor.close()
-
-    flash(f"Seja bem-vindo, {nome}", "success")
-    return render_template('financas.html', despesa=despesa, receita=receita, historico_despesa=historico_despesa, historico_receita=historico_receita)
+    return render_template('financas.html', despesa=despesa, receita=receita, historico_despesa=historico_despesa, historico_receita=historico_receita,nome = nome, modal=modal)
 
 @app.route('/criar', methods=['POST'])
 def criar():
@@ -82,31 +89,40 @@ def criar():
     senha = request.form['senha']
     email = request.form['email']
 
+    if not nome or not senha or not email:
+        flash("Todos os campos são obrigatórios", "error")
+        return render_template('index.html', modal="cadastro")
+
+        # Valida a força da senha
+    if not validar_senha(senha):
+        flash("Senha fraca! Inclua letras maiúsculas, minúsculas, números e caracteres especiais.", "error")
+        return render_template('index.html', modal="cadastro")
+
     cursor = con.cursor()
     try:
-        # Verificar se o usuário já existe
-        cursor.execute("SELECT 1 FROM usuario WHERE NOME = ?", (nome,))
-        if cursor.fetchone():  # Se existir algum registro
+        cursor.execute("SELECT * FROM usuario WHERE EMAIL = ?", (email,))
+        if cursor.fetchone():
             flash("Email já cadastrado.", "error")
-            return redirect(url_for('index'))
-
-        # Inserir o novo usuário
+            return render_template('index.html', modal="cadastro")
         cursor.execute(
             "INSERT INTO usuario (NOME, senha, EMAIL) VALUES (?, ?, ?)",
             (nome, senha, email)
         )
         con.commit()
     finally:
-        # Fechar o cursor manualmente, mesmo que haja erro
         cursor.close()
 
     flash("Usuário cadastrado com sucesso!", "success")
-    return render_template('index.html')
+    return render_template('index.html', modal="login")
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     senha = request.form['senha']
     email = request.form['email']
+
+    if not email or not senha:
+        flash("Todos os campos são obrigatórios", "error")
+        return render_template('index.html', modal="login")
 
     cursor = con.cursor()
 
@@ -119,7 +135,7 @@ def login():
         return redirect(url_for('financas'))
     else:
         flash("Email ou senha inválidos!", "error")
-        return render_template('index.html')
+        return render_template('index.html', modal="login")
 
 
 @app.route('/nova_transacao/<tipo>', methods=['POST'])
@@ -131,11 +147,11 @@ def nova_transacao(tipo):
 
     if not fonte or not valor or not data or not id_usuario:
         flash("Todos os campos são obrigatórios", 'error')
-        return redirect(url_for('financas'))
+        return financas("financas")
 
     if not id_usuario:
         flash("Sessão não iniciada", "error")
-        return redirect(url_for('index'))  # ou qualquer outra página de login
+        return redirect(url_for('index'))
 
     cursor = con.cursor()
     if tipo == 'saida':
@@ -164,7 +180,7 @@ def editar():
 
     if not fonte or not valor or not data or not tipo or not id_transacao:
         flash("Todos os campos são obrigatórios", 'error')
-        return redirect(url_for('financas'))
+        return redirect(url_for('financas', ))
 
     cursor = con.cursor()
 
