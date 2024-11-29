@@ -1,0 +1,109 @@
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+}
+
+:root {
+    --fundo: #46464f;
+}
+
+header.header1 {
+    background-color: #000000; /* Fundo do header */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+  
+header .logo img {
+    max-width: 120px;
+}
+  
+  /* Section */
+section {
+    text-align: center;
+    padding: 50px 20px;
+}
+  
+section h1 {
+    font-size: 2.5rem;
+    color: #00B27E;
+    margin-bottom: 20px;
+}
+  
+.subtitulo {
+    font-size: 1.2rem;
+    color:#000000;
+}
+  
+.lucro {
+    color: #00ffb3;
+    font-weight: bold;
+}
+  
+section .gasto {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+/* CSS do body */
+.corpo {
+    background-color: var(--fundo);
+}
+
+/* Cabeçalho */
+footer {
+    background-color: #121212;
+    padding: 40px;
+    padding-top: 2px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: -5px;
+    
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer-logo img {
+    width: 110px;
+}
+
+.footer-section {
+    max-width: 200px;
+}
+
+.footer-section h3 {
+    color: #00B27E;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ffffff  ;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    background-color: #067B5A;
+    border-radius: 2px;
+}

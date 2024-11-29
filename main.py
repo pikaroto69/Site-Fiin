@@ -5,7 +5,7 @@ app = Flask(__name__)
 app.secret_key = 'matheus-lindo'
 
 host = 'localhost'
-database = r'C:\Users\Aluno\PycharmProjects\Sitenovo\WePay.FDB'
+database = r'C:\Users\Aluno\Desktop\Site-Fiin\WePay.FDB'
 user = 'SYSDBA'
 password = 'sysdba'
 
