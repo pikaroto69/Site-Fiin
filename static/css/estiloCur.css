@@ -87,7 +87,7 @@ body {
 }
 
 .xVideos {
-
+  margin-top: 30px;
   align-items: center;
   display: flex;
   flex-direction: column;
