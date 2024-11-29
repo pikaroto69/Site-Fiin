@@ -169,3 +169,55 @@ footer {
     background-color: #067B5A;
     border-radius: 2px;
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header1 {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .btn_redirecionar {
+      margin-top: 1rem;
+      font-size: small;
+    }
+  
+    h1[titulo] {
+      font-size: 1.8rem;
+    }
+  
+    h2.subtitulo {
+      font-size: 1.2rem;
+    }
+  
+    footer {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .btn_redirecionar button {
+      font-size:smaller;
+      padding: 0.4rem 0.8rem;
+    }
+
+    .titulo {
+        font-size:23px;
+    }
+
+    .subtitulo {
+        font-size: 16px;
+    }
+
+    .intro_premium {
+        font-size: 12;
+    }
+  
+    footer {
+      text-align: center;
+    }
+  
+    footer .footer-section {
+      margin: 0.5rem;
+    }
+  }
