@@ -74,7 +74,7 @@ header li button {
 
 .banner {
   height: 100vh;
-  background-image: url("../img/banner2.png");
+  background-image: url("../img/banner.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -562,7 +562,7 @@ header li button {
 
 .banner {
     height: 100vh;
-    background-image: url("/static/img/banner2.png");
+    background-image: url("../img/banner2.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
