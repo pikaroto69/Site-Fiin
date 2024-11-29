@@ -86,6 +86,22 @@ section .gasto {
     background-color: var(--fundo);
 }
 
+.txt_premium {
+    color: #ffffff;
+}
+
+div .intro_premium {
+    margin: 25px;
+    margin-left: 45px;
+}
+
+div p {
+    margin-left: 45px;
+    margin-right: 30px;
+    margin-bottom: 55px;
+    font-size:14px;
+}
+
 .sessao_videos {
     align-items: center;
     display: flex;
