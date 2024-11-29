@@ -67,11 +67,13 @@ section h1 {
 .lucro {
     color: #00ffb3;
     font-weight: bold;
+    text-decoration: underline;
 }
   
 section .gasto {
     color: #ff0000;
     font-weight: bold;
+    text-decoration: underline;
 }
 
 /* CSS do body */
