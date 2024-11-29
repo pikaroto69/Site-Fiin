@@ -74,7 +74,7 @@ header li button {
 
 .banner {
   height: 100vh;
-  background-image: url("/static/img/banner2.png");
+  background-image: url("../img/banner2.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -221,14 +221,7 @@ footer {
   border-radius: 2px;
 }
 
-.btn-sair2 {
-  background-color: #067b5a00;
-  width: 120px;
-  height: 52px;
-  margin-right: 5px;
-  cursor: auto;
-  color: rgba(66, 0, 0, 0);
-}
+
 
 @media (max-width: 330px) {
   footer {
@@ -251,9 +244,9 @@ footer {
 }
 
 .div-button button {
-  background-color: transparent;
-  border: 1px solid #00b27e;
-  color: #00b27e;
+  background-color: #11624a6f;
+  border: 1px solid #11624a;
+  color: #1df3b2;
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
